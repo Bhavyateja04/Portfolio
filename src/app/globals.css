@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+:root {
+  --color-lavender: #CDB8FF;
+  --color-lilac: #E4DAFF;
+  --color-peach: #FFDFD3;
+  --color-cream: #FFFDF6;
+  --color-offwhite: #FAFAF5;
+  --color-pink: #FFB7B2;
+  --color-blue: #B3C5FF;
+  --color-sage: #E8F0E6;
+  --color-sage-dark: #6C7A6B;
+  --color-charcoal: #3D3D3D;
+  --color-mint: #C4F4E2;
+  --color-yellow-doodle: #FFF275;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-charcoal);
+}
+
+@theme {
+  --color-lavender: var(--color-lavender);
+  --color-lilac: var(--color-lilac);
+  --color-peach: var(--color-peach);
+  --color-cream: var(--color-cream);
+  --color-offwhite: var(--color-offwhite);
+  --color-pink: var(--color-pink);
+  --color-blue: var(--color-blue);
+  --color-sage: var(--color-sage);
+  --color-sage-dark: var(--color-sage-dark);
+  --color-charcoal: var(--color-charcoal);
+  --color-mint: var(--color-mint);
+  --color-yellow-doodle: var(--color-yellow-doodle);
+  
+  --font-display: var(--font-fredoka), var(--font-geist-sans), sans-serif;
+  --font-body: var(--font-quicksand), var(--font-geist-sans), sans-serif;
+  --font-handwritten: var(--font-caveat), cursive;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  background-image: 
+    radial-gradient(var(--color-lavender) 8%, transparent 8%),
+    radial-gradient(var(--color-peach) 8%, transparent 8%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Custom Scrapbook & Journal Accents */
+.scrapbook-paper {
+  background: #ffffff;
+  border: 2px solid #3D3D3D;
+  box-shadow: 4px 4px 0px #3D3D3D;
+  border-radius: 16px;
+  position: relative;
+}
+
+.notebook-ruled {
+  background-image: linear-gradient(#e1e8f5 1px, transparent 1px);
+  background-size: 100% 2rem;
+  line-height: 2rem;
+}
+
+.notebook-grid {
+  background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-lavender) 15%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-lavender) 15%, transparent) 1px, transparent 1px);
+}
+
+/* Washi / Paper Tape Visual Effect */
+.washi-tape {
+  position: absolute;
+  width: 90px;
+  height: 28px;
+  background-color: color-mix(in srgb, var(--color-pink) 70%, transparent);
+  backdrop-filter: blur(1px);
+  border-left: 3px dashed rgba(255, 255, 255, 0.5);
+  border-right: 3px dashed rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  transform: rotate(-3deg);
+  z-index: 10;
+}
+
+.washi-tape-lavender {
+  background-color: color-mix(in srgb, var(--color-lavender) 70%, transparent);
+}
+
+.washi-tape-blue {
+  background-color: color-mix(in srgb, var(--color-blue) 70%, transparent);
+}
+
+.washi-tape-sage {
+  background-color: color-mix(in srgb, var(--color-sage) 75%, transparent);
+}
+
+/* Stitched border style */
+.border-stitched {
+  border: 2px dashed #3D3D3D;
+}
+
+/* Binder Rings */
+.binder-ring {
+  width: 14px;
+  height: 36px;
+  background: linear-gradient(to right, #cfcfcf, #efefef, #b8b8b8);
+  border-radius: 6px;
+  border: 1.5px solid #3d3d3d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Sparkles and star micro-animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-subtle {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Custom styles for handwritten text elements */
+.handwritten {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  color: #5d5d81;
+}
+
+/* Scrollbar customization for aesthetic feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-lavender);
+  border: 2px solid var(--color-cream);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink);
+}
+
+/* Selection overlay */
+::selection {
+  background: var(--color-peach);
+  color: var(--color-charcoal);
+}
+
+/* Global transitions for theme morphing */
+body, 
+main,
+footer,
+section,
+header,
+nav,
+div,
+button,
+span,
+a,
+svg,
+circle,
+path,
+.washi-tape,
+.binder-ring {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Infinite Marquee Scrolling */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
