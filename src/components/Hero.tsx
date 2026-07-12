@@ -87,7 +87,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-3 font-display text-2xl sm:text-3xl text-charcoal/80 font-semibold"
           >
-            Software Engineer • Frontend Developer • Problem Solver
+            Software Engineer • Full Stack Developer • Problem Solver
           </motion.h2>
 
           <motion.p
@@ -106,14 +106,16 @@ export default function Hero({ onScrollTo }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-8 flex flex-wrap gap-4 items-center"
           >
-            {/* View Projects */}
-            <button
-              onClick={() => onScrollTo("projects")}
-              className="px-6 py-3 font-display font-bold text-charcoal bg-peach border-2 border-charcoal hover:bg-peach/90 hover:translate-y-[-2px] active:translate-y-[1px] shadow-[4px_4px_0px_#3D3D3D] hover:shadow-[6px_6px_0px_#3D3D3D] active:shadow-[2px_2px_0px_#3D3D3D] rounded-2xl flex items-center gap-2 cursor-pointer transition-all"
-            >
-              <span>View Projects</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+           {/* View Resume */}
+<a
+  href="https://drive.google.com/file/d/1MMKstpjPuF7kDXlJ7IRCCIUKIbV3tezw/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 font-display font-bold text-charcoal bg-peach border-2 border-charcoal hover:bg-peach/90 hover:translate-y-[-2px] active:translate-y-[1px] shadow-[4px_4px_0px_#3D3D3D] hover:shadow-[6px_6px_0px_#3D3D3D] active:shadow-[2px_2px_0px_#3D3D3D] rounded-2xl flex items-center gap-2 cursor-pointer transition-all"
+>
+  <span>View Resume</span>
+  <ArrowRight className="w-4 h-4" />
+</a>
 
             {/* Contact Me */}
             <button
